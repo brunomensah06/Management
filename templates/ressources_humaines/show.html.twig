@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Information complète de l'employé{% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a href="{{ path('home')}}" class="navbar-brand" href="#">SAFEC Management</a>
+  </nav>
+  <div class="container">
+    </br>
+</br>
+    <h1>Information complète de l'employé</h1>
+</br>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ressources_humaine.id }}</td>
+            </tr>
+            <tr>
+                <th>Prénoms</th>
+                <td>{{ ressources_humaine.Prenoms }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ ressources_humaine.Nom }}</td>
+            </tr>
+            <tr>
+                <th>Matricule</th>
+                <td>{{ ressources_humaine.Matricule }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ ressources_humaine.Email }}</td>
+            </tr>
+            <tr>
+                <th>Diplôme</th>
+                <td>{{ ressources_humaine.Diplome }}</td>
+            </tr>
+            <tr>
+                <th>Date de naissance</th>
+                <td>{{ ressources_humaine.DateDeNaissance ? ressources_humaine.DateDeNaissance|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Lieu de naissance</th>
+                <td>{{ ressources_humaine.LieuDeNaissance }}</td>
+            </tr>
+            <tr>
+                <th>Carte Nationale d'identité</th>
+                <td>{{ ressources_humaine.CNI }}</td>
+            </tr>
+            
+            <tr>
+                <th>Statut dans l'entreprise</th>
+                <td>{{ ressources_humaine.StatutDansLEntreprise }}</td>
+            </tr>
+            <tr>
+                <th>Situation matrimoniale</th>
+                <td>{{ ressources_humaine.situationMatrimoniale }}</td>
+            </tr>
+            <tr>
+                <th>Type de contrat</th>
+                <td>{{ ressources_humaine.typeDeContrat }}</td>
+            </tr>
+            <tr>
+                <th>IPRES</th>
+                <td>{{ ressources_humaine.IPRES }}</td>
+            </tr>
+            <tr>
+                <th>CSS</th>
+                <td>{{ ressources_humaine.CSS }}</td>
+            </tr>
+            <tr>
+                <th>Déclaration fiscale</th>
+                <td>{{ ressources_humaine.DeclarationFiscale }}</td>
+            </tr>
+            <tr>
+                <th>Impôts</th>
+                <td>{{ ressources_humaine.Impots }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="{{ path('ressources_humaines_index') }}">Retourner à la liste</a>
+
+    <a href="{{ path('ressources_humaines_edit', {'id': ressources_humaine.id}) }}">Modifier</a>
+
+    {{ include('ressources_humaines/_delete_form.html.twig') }}
+
+  </div>
+ 
+
+{% endblock %}

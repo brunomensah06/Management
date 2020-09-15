@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue dans Gestion {% endblock %}
+
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a href="{{ path('home')}}" class="navbar-brand" href="#">SAFEC Management</a>
+  
+<div class="deconnexion">
+            {% if app.user %}
+             <a href="{{ path('app_logout')}}" class="btn btn-danger"  >Déconnexion</a>
+      {% endif %}
+</div>
+<style>
+.deconnexion
+{   display: block;
+    margin-left: auto;
+    
+    
+}
+</style>
+  </nav>
+
+   
+
+{% endblock %}

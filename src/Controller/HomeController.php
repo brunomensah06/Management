@@ -23,4 +23,13 @@ class HomeController extends AbstractController
     {
     	return $this->redirectToRoute('app_login');
     }
+    
+
+     /**
+     * @Route("/gestion", name="gestion")
+     */
+    public function accueilHome()
+    {
+    	return $this->render('gestion/accueil.html.twig');
+    }
 }

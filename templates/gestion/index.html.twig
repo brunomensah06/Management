@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion index{% endblock %}
+
+{% block body %}
+<div class="container">
+<br>
+<br>
+
+    <h1>Gestion index</h1>
+<br>
+    <table class="table  table-bordered table-active">
+        <thead>
+            <tr>
+                <th>Marchés</th>
+                <th>Maitres d'ouvrages</th>
+                <th>Projets</th>
+                <th>Montant TTC</th>
+                <th>Début projet</th>
+                <th>Contrat</th>
+                <th>Durée projet</th>
+                <th>Date de fin</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gestion in gestions %}
+            <tr class="table-active">
+                <td>{{ gestion.Marches }}</td>
+                <td>{{ gestion.MaitresOuvrages }}</td>
+                <td>{{ gestion.Projets }}</td>
+                <td>{{ gestion.Montant }}</td>
+                <td>{{ gestion.DebutProjet ? gestion.DebutProjet|date('d-m-Y') : '' }}</td>
+                <td>{{ gestion.Contrat }}</td>
+                <td>{{ gestion.DureeProjet ? gestion.DureeProjet|date('d-m-Y') : '' }}</td>
+                <td>{{ gestion.DateDeFin ? gestion.DateDeFin|date('d-m-Y') : '' }}</td>
+                <td>
+               <a href="{{ path('gestion_show', {'id': gestion.id}) }}">  <i class="fas fa-flower fa-fw">  </i> </a>
+               <br>
+               <a href="{{ path('gestion_edit', {'id': gestion.id}) }}"> <i class="fas fa-flower fa-fw">  </i> </a> 
+                </td>
+            </tr>
+        
+        {% else %}
+       
+            <tr>
+                <td colspan="10">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('gestion_new') }}">Enregistrer un nouveau projet</a>
+    </div>
+{% endblock %}

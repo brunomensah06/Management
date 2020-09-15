@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Récapitulatif Ressources Humaines {% endblock %}
+
+{% block body %}
+<div class="container">
+<br>
+<br>
+    <h1>Récapitulatif Ressources Humaines </h1>
+<br>
+
+   <button class="btn btn-outline-primary"> <a href="{{ path('ressources_humaines_new') }}">Ajouter un employé</a></button>
+<br>
+<div class="table-responsive">
+    <table class="table  table-bordered table-active">
+        <thead>
+            <tr>
+                <th>Prénoms</th>
+                <th>Nom</th>
+                <th>Diplôme</th>
+                <th>Statut dans l'entreprise</th>
+                <th>Type de contrat</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for ressources_humaine in ressources_humaines %}
+            <tr>
+                <td>{{ ressources_humaine.Prenoms }}</td>
+                <td>{{ ressources_humaine.Nom }}</td>
+                <td>{{ ressources_humaine.Email }}</td>
+                <td>{{ ressources_humaine.StatutDansLEntreprise }}</td>
+                <td>{{ ressources_humaine.typeDeContrat }}</td>
+                <td>
+                    <a href="{{ path('ressources_humaines_show', {'id': ressources_humaine.id}) }}">Afficher</a>
+                    <a href="{{ path('ressources_humaines_edit', {'id': ressources_humaine.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">Aucun enregistrement trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

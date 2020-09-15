@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion{% endblock %}
+
+{% block body %}
+<div class="container">
+ <br>
+            <br>
+    <h1>Gestion</h1>
+
+    <table class="table">
+        <tbody>
+            <br>
+            <br>
+            <br>
+            <tr>
+                <th>Marchés</th>
+                <td>{{ gestion.Marches }}</td>
+            </tr>
+            <tr>
+                <th>Maitres d'ouvrages</th>
+                <td>{{ gestion.MaitresOuvrages }}</td>
+            </tr>
+            <tr>
+                <th>Projets</th>
+                <td>{{ gestion.Projets }}</td>
+            </tr>
+            <tr>
+                <th>Montant TTC</th>
+                <td>{{ gestion.Montant }}</td>
+            </tr>
+            <tr>
+                <th>Début projet</th>
+                <td>{{ gestion.DebutProjet ? gestion.DebutProjet|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Contrat</th>
+                <td>{{ gestion.Contrat }}</td>
+            </tr>
+            <tr>
+                <th>Durée projet</th>
+                <td>{{ gestion.DureeProjet ? gestion.DureeProjet|date('d-m-Y') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Date de fin</th>
+                <td>{{ gestion.DateDeFin ? gestion.DateDeFin|date('d-m-Y') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+     <a href="{{ path('gestion_index') }}">Retourner sur la liste</a>
+
+
+    <a href="{{ path('gestion_edit', {'id': gestion.id}) }}">Modifier</a>
+
+    {{ include('gestion/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

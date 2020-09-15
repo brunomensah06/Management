@@ -1,20 +1,89 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %} Accueil {% endblock %}
 
 {% block body %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a href="{{ path('home')}}" class="navbar-brand" href="#">SAFEC Management</a>
+  
+
+  </nav>
+
+<div class="container mt-4"> 
+     <div class="row">
+    <div class="col-md-4">
+            <div class="card bg-light mb-3"  style="max-width: 20rem;">
+            <div class="card-header">RESSOURCES HUMAINES</div>
+            <div class="card-body">
+            <h4 class="card-title"> <a href="{{ path('ressources_humaines_index')}}"> RESSOURCES HUMAINES </a> </h4> 
+            <p class="card-text">Sélectionner cette rubrique pour avoir les informations sur le personnel travaillant avec la SAFEC.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+            <div class="card-header">S.O.F</div>
+            <div class="card-body">
+            <a href="http://simulateur.safec.sn/app_calcul/index.php/accueil" target="_blank">
+            <h4 class="card-title">SIMULATEUR D'OFFRES </h4>
+            </a>
+            <p class="card-text">Sélectionner cette rubrique pour voir le prix approximatimaf avant de soumissionner à un marché.</p>
+   
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">GESTION</div>
+        <div class="card-body">
+          <h4 class="card-title"> <a href="{{ path('gestion')}}"> Gestion des contrats </a> </h4> 
+        <p class="card-text">Cette rubrique nous permet d'acceder aux projets de la SAFEC et d'autres informations.</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="container mt-4"> 
+     <div class="row">
+    <div class="col-md-4">
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h4 class="card-title">Warning card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h4 class="card-title">Info card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card bg-light mb-3" style="max-width: 20rem;">
+        <div class="card-header">Header</div>
+        <div class="card-body">
+        <h4 class="card-title">Dark card title</h4>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    </div>
+    </div>
+            <div class="deconnexion">
+            {% if app.user %}
+             <a href="{{ path('app_logout')}}" class="btn btn-danger"  >Déconnexion</a>
+      {% endif %}
+</div>
 <style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+.deconnexion
+{   display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/SAFEC-Management/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/SAFEC-Management/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    
 {% endblock %}

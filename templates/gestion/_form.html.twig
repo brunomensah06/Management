@@ -1,0 +1,41 @@
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{{ form_start(form) }}
+ 
+            {{form_row(form.Marches)}}
+  <div class="row">
+ 
+    <div class="col-md-4">
+            {{form_row(form.Projets)}}
+    </div>
+    <div class="col-md-4">
+            {{form_row(form.Montant)}}
+    </div>
+    <div class="col-md-4">
+            {{form_row(form.Maitres_ouvrages)}}
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+            {{form_row(form.Debut_projet)}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.Contrat)}}
+            
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.Duree_projet)}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.Date_de_fin)}}
+    </div>
+
+  </div>
+
+
+    <button class="btn btn-success">{{ button_label|default('Créer') }}</button>
+{{ form_end(form) }}
+
+

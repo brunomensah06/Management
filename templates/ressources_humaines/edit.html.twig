@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un employé{% endblock %}
+
+{% block body %}
+    <h1>Modifier un employé</h1>
+
+    {{ include('ressources_humaines/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('ressources_humaines_index') }}">Afficher la liste</a>
+
+    {{ include('ressources_humaines/_delete_form.html.twig') }}
+{% endblock %}

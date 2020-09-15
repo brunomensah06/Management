@@ -1,0 +1,110 @@
+{{ form_start(form) }}
+
+ <div class="container">
+    </br>
+    <h1> Ajouter un employé </h1>
+   
+
+  <br>
+<div class="alert alert-dark" role="alert">
+  Renseigner les informations sur l'employé à enregistré .
+</div>
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-4">
+        {{form_row(form.type,{ 
+            'label':'Type'
+        })}}
+         </div>
+
+     <div class="col-md-4">
+         {{form_row(form.Prenoms,{
+            'label':'Prénom(s)'
+        })}}
+         </div>
+
+    <div class="col-md-4">
+            {{form_row(form.Nom)}}
+            </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+            {{form_row(form.Matricule)}}
+    </div>
+    <div class="col-md-4">
+            {{form_row(form.Email)}}
+     </div>
+    <div class="col-md-3">
+            {{form_row(form.Diplome,{
+            'label':'Diplôme'
+        })}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+            {{form_row(form.Date_de_naissance)}} 
+    </div>
+    <div class="col-md-4">
+            {{form_row(form.Lieu_de_naissance)}}
+    </div>
+    <div class="col-md-4">
+            {{form_row(form.CNI,{
+            'label':'Numéro de Carte d\'identité'
+        })}}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+            {{form_row(form.Photo)}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.Statut_dans_l_entreprise,{
+            'label':'Intitulé de poste'
+        })}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.situation_matrimoniale,{
+            'label':'Situation matrimoniale'
+        })}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.type_de_contrat,{
+            'label':'Type de contrat'
+        })}}
+    </div>
+</div>
+<div class="alert alert-dark" role="alert">
+  Vous remplirez ici les informations relatives au  <a href="https://www.eurocham.sn/LA+LEGISLATION+DU+TRAVAIL/" target="_blank" class="alert-link">déclarations sociales</a>. de votre employé.
+</div>
+
+ <div class="row">
+    <div class="col-md-3">
+            {{form_row(form.IPRES,{
+            'label':'IPRES'
+        })}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.CSS,{
+            'label':'CSS'
+        })}}
+    </div>
+
+    <div class="col-md-3">
+            {{form_row(form.Declaration_fiscale,{
+            'label':'Déclaration fiscale'
+        })}}
+    </div>
+    <div class="col-md-3">
+            {{form_row(form.Impots,{
+            'label':'Impôts'
+        })}}
+    </div>
+</div>
+  <br>
+  <br>
+    <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+  <br>
+    <a href="{{ path('ressources_humaines_index') }}">Retourner à la liste</a>
+    
+{{ form_end(form) }}
